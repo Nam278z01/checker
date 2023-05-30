@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ClassListComponent } from './class-list/class-list.component';
+import { ClassListComponent } from './components/class-list/class-list.component';
 
 @NgModule({
     imports: [RouterModule.forChild([

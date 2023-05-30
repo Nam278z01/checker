@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TeacherRoutingModule } from './teacher-routing.module';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ButtonModule } from 'primeng/button';
@@ -15,13 +14,19 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
-import { TeacherComponent } from './teacher.component';
-import { ClassListComponent } from './components/class-list/class-list.component';
+import { CalendarModule } from "primeng/calendar";
+
+import { SecretaryRoutingModule } from './secretary-routing.module';
+import { SecretaryComponent } from './secretary.component';
+import { TeacherManagementComponent } from './components/teacher-management/teacher-management.component';
+import { ClassManagementComponent } from './components/class-management/class-management.component';
+import { StudentManagementComponent } from './components/student-management/student-management.component';
+import { SubjectManagementComponent } from './components/subject-management/subject-management.component';
 
 @NgModule({
     imports: [
         CommonModule,
-        TeacherRoutingModule,
+        SecretaryRoutingModule,
         TableModule,
         FileUploadModule,
         FormsModule,
@@ -35,8 +40,9 @@ import { ClassListComponent } from './components/class-list/class-list.component
         DropdownModule,
         RadioButtonModule,
         InputNumberModule,
-        DialogModule
+        DialogModule,
+        CalendarModule
     ],
-    declarations: [TeacherComponent, ClassListComponent]
+    declarations: [SecretaryComponent, TeacherManagementComponent, ClassManagementComponent, StudentManagementComponent, SubjectManagementComponent]
 })
-export class TeacherModule { }
+export class SecretaryModule { }

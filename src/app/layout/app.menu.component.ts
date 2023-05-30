@@ -27,6 +27,15 @@ export class AppMenuComponent implements OnInit {
                 ],
             },
             {
+                label: 'Phân hệ giáo vụ',
+                items: [
+                    { label: 'Quản lý danh sách giảng viên', icon: 'pi pi-fw pi-home', routerLink: ['/secretary/teacher-management'] },
+                    { label: 'Quản lý danh sách lớp học', icon: 'pi pi-fw pi-home', routerLink: ['/secretary/class-management'] },
+                    { label: 'Quản lý danh sách sinh viên', icon: 'pi pi-fw pi-home', routerLink: ['/secretary/student-management'] },
+                    { label: 'Quản lý danh sách lớp môn học', icon: 'pi pi-fw pi-home', routerLink: ['/secretary/subject-management'] },
+                ],
+            },
+            {
                 label: 'UI Components',
                 items: [
                     {
