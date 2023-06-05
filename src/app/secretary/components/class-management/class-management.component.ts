@@ -52,6 +52,7 @@ export class ClassManagementComponent implements OnInit {
         this.model = {};
         this.submitted = false;
         this.dialog = true;
+
     }
 
     deleteSelected() {

@@ -17,6 +17,7 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) },
                     { path: 'teacher', loadChildren: () => import('./teacher/teacher.module').then(m => m.TeacherModule) },
                     { path: 'secretary', loadChildren: () => import('./secretary/secretary.module').then(m => m.SecretaryModule) },
+                    { path: 'plagiarism-checker', loadChildren: () => import('./plagiarism-checker/plagiarism-checker.module').then(m => m.PlagiarismCheckerModule) },
                 ]
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },

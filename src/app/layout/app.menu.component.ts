@@ -21,6 +21,12 @@ export class AppMenuComponent implements OnInit {
                 ],
             },
             {
+                label: 'Plagiarism Checker',
+                items: [
+                    { label: 'Checker', icon: 'pi pi-fw pi-home', routerLink: ['/plagiarism-checker/checker'] },
+                ],
+            },
+            {
                 label: 'Phân hệ giảng viên',
                 items: [
                     { label: 'Danh sách lớp học', icon: 'pi pi-fw pi-home', routerLink: ['/teacher/class-list'] },

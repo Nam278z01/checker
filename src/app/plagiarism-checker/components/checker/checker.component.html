@@ -1,0 +1,224 @@
+<div class="grid">
+    <div class="col-12">
+        <div
+            class="card px-6 py-6"
+            style="display: flex; justify-content: center"
+        >
+            <div class="checker-box">
+                <div class="checker-box-content">
+                    <div>
+                        <div class="checker-box-content-header">
+                            <p-table
+                                *ngIf="uploadFiles.length > 0"
+                                [value]="uploadFiles"
+                                scrollDirection="both"
+                                [scrollable]="true"
+                                scrollHeight="400px"
+                                styleClass="mt-3"
+                                responsiveLayout="scroll"
+                                styleClass="p-datatable-gridlines"
+                            >
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th style="width: 200px">Tên file</th>
+                                        <th style="width: 200px">Loại file</th>
+                                        <th style="width: 200px">Dung lượng</th>
+                                        <th style="width: 100px"></th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template
+                                    pTemplate="body"
+                                    let-file
+                                    let-rowIndex
+                                >
+                                    <tr>
+                                        <td
+                                            style="width: 200px"
+                                            pFrozenColumn
+                                            class="font-bold"
+                                        >
+                                            {{ file.name }}
+                                        </td>
+                                        <td style="width: 200px">
+                                            {{ file.type }}
+                                        </td>
+                                        <td style="width: 200px">
+                                            {{ file.size }}
+                                        </td>
+                                        <td>
+                                            <div class="flex">
+                                                <button
+                                                    pButton
+                                                    pRipple
+                                                    icon="pi pi-trash"
+                                                    class="p-button-rounded p-button-warning"
+                                                    (click)="
+                                                        deleteFile(rowIndex)
+                                                    "
+                                                ></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                        <div class="checker-box-content-footer">
+                            <button
+                                class="checker-box-button-scan"
+                                (click)="onPlagiarismChecker()"
+                            >
+                                Scan for plagiarism
+                            </button>
+                            <label for="myfileid">
+                                <div
+                                    class="checker-box-button-upload"
+                                    [ngClass]="{
+                                        disabled: this.uploadFiles.length > 0
+                                    }"
+                                >
+                                    <span class="pi pi-upload"></span>
+                                    <span>Upload</span>
+                                    <input
+                                        type="file"
+                                        style="display: none"
+                                        accept=".doc, .docx"
+                                        id="myfileid"
+                                        (change)="onUpload($event)"
+                                        [disabled]="this.uploadFiles.length > 0"
+                                    />
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div
+                        class="checker-box-waiting-upload"
+                        *ngIf="showWaitingUpload"
+                    >
+                        <div>
+                            <div style="width: 80%">
+                                <i
+                                    class="pi pi-spin pi-spinner"
+                                    style="
+                                        font-size: 2rem;
+                                        color: var(--primary-color);
+                                    "
+                                ></i>
+                            </div>
+                            <div style="width: 100%">Đang upload</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="checker-box-waiting-plagiarism-checker"
+                        *ngIf="showPlagiarismChecker"
+                    >
+                        <div>
+                            <div style="width: 80%">
+                                <i
+                                    class="pi pi-spin pi-spinner"
+                                    style="
+                                        font-size: 2rem;
+                                        color: var(--primary-color);
+                                    "
+                                ></i>
+                            </div>
+                            <div style="width: 100%">Scan for plagiarism</div>
+                            <div style="width: 100%; opacity: 0.9">
+                                Grammarly is looking for plagiarism and writing
+                                mistakes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card px-6 py-6">
+            <div class="result-box">
+                <div class="result-box-header"></div>
+                <div class="result-box-content">
+                    <div class="result-box-top">
+                        <div>
+                            <p
+                                style="background-color: var(--primary-color)"
+                            ></p>
+                            <span>23% Overall Similarity</span>
+                        </div>
+                        <p>Top sources found in the following databases</p>
+                        <div>
+                            <ul>
+                                <li>23% Internet database</li>
+                                <li>0% Publications database</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="result-box-bottom">
+                        <div class="result-box-bottom-title">
+                            <div>TOP SOURCES</div>
+                            <div>
+                                The sources with the hightest number of matches
+                                within the submission. Overlapping source will
+                                not be displayed
+                            </div>
+                        </div>
+                        <div class="result-box-bottom-list">
+                            <div class="result-box-bottom-item">
+                                <div class="result-box-bottom-item-index">
+                                    <p
+                                        style="
+                                            background-color: var(
+                                                --primary-color
+                                            );
+                                        "
+                                    >
+                                        1
+                                    </p>
+                                </div>
+                                <div class="result-box-bottom-item-content">
+                                    <div
+                                        class="result-box-bottom-item-content-site"
+                                    >
+                                        <div>online.library.wiley.com</div>
+                                        <div>Internet</div>
+                                    </div>
+                                    <div
+                                        class="result-box-bottom-item-content-percent"
+                                    >
+                                        8%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-box-bottom-item">
+                                <div class="result-box-bottom-item-index">
+                                    <p
+                                        style="
+                                            background-color: var(
+                                                --primary-color
+                                            );
+                                        "
+                                    >
+                                        2
+                                    </p>
+                                </div>
+                                <div class="result-box-bottom-item-content">
+                                    <div
+                                        class="result-box-bottom-item-content-site"
+                                    >
+                                        <div>online.library.wiley.com</div>
+                                        <div>Internet</div>
+                                    </div>
+                                    <div
+                                        class="result-box-bottom-item-content-percent"
+                                        style="color: var(--primary-color)"
+                                    >
+                                        8%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
