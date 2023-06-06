@@ -14,10 +14,20 @@ export class CheckerComponent {
     showPlagiarismChecker = false;
     interval: any;
 
+    percent = 0;
+
     constructor(private messageService: MessageService) { }
 
     ngOnInit() {
+        this.interval = setInterval(() => {
+            this.percent = this.percent + Math.floor(Math.random() * 10) + 1;
 
+            if (this.percent >= 23) {
+                this.percent = 23;
+                clearInterval(this.interval);
+                this.showWaitingUpload = false;
+            }
+        }, 300);
     }
 
     ngOnDestroy() {
