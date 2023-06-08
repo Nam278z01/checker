@@ -44,7 +44,7 @@ import { CheckerComponent } from './components/checker/checker.component';
         CalendarModule,
         MessageModule,
         MessagesModule,
-        BadgeModule
+        BadgeModule,
     ],
     declarations: [PlagiarismCheckerComponent, CheckerComponent]
 })

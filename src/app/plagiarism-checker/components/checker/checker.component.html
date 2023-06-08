@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="card px-6 py-6">
+        <div class="card px-6 py-6" *ngIf="showResult">
             <div class="result-box">
                 <div class="result-box-header"></div>
                 <div class="result-box-content">
@@ -220,6 +220,13 @@
                     </div>
                 </div>
             </div>
+
+            <button style="margin: auto; margin-top: 30px"
+                class="checker-box-button-scan"
+                (click)="download()"
+            >
+                Download
+            </button>
         </div>
     </div>
 </div>

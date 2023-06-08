@@ -52,26 +52,27 @@
 .checker-box-content-footer {
     display: flex;
     justify-content: center;
-    .checker-box-button-scan {
-        display: flex;
-        flex-shrink: 0;
-        font-family: Inter,sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        align-items: center;
-        line-height: 32px;
-        position: relative;
-        width: max-content;
-        background: var(--primary-color);
-        color: #fff;
-        border-radius: 6px;
-        height: 48px;
-        padding: 8px 32px;
-        border: none;
-        cursor: pointer;
-        &:hover {
-            filter: brightness(95%);
-        }
+}
+
+.checker-box-button-scan {
+    display: flex;
+    flex-shrink: 0;
+    font-family: Inter,sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    line-height: 32px;
+    position: relative;
+    width: max-content;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 6px;
+    height: 48px;
+    padding: 8px 32px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        filter: brightness(95%);
     }
 }
 

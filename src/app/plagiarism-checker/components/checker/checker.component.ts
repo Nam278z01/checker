@@ -1,22 +1,26 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { CheckerService } from '../../service/class.service';
+
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-checker',
   templateUrl: './checker.component.html',
   styleUrls: ['./checker.component.scss'],
-  providers: [MessageService]
+  providers: [MessageService, CheckerService]
 })
 export class CheckerComponent {
     uploadFiles: any[] = [];
     value = 0;
     showWaitingUpload = false;
     showPlagiarismChecker = false;
+    showResult = false;
     interval: any;
 
     percent = 0;
 
-    constructor(private messageService: MessageService) { }
+    constructor(private messageService: MessageService, private checkerService: CheckerService) {}
 
     ngOnInit() {
         this.interval = setInterval(() => {
@@ -63,6 +67,7 @@ export class CheckerComponent {
                 this.value = 0;
                 clearInterval(this.interval);
                 this.showPlagiarismChecker = false;
+                this.showResult = true;
             }
         }, 200);
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Class Deleted', life: 3000 });
@@ -71,5 +76,11 @@ export class CheckerComponent {
 
     deleteFile(index: number) {
         this.uploadFiles.splice(index, 1)
+    }
+
+    download() {
+
+        var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+        saveAs(blob, "mon_hoc.docx");
     }
 }
