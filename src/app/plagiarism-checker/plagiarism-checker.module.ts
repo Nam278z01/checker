@@ -22,6 +22,7 @@ import { BadgeModule } from 'primeng/badge';
 import { PlagiarismCheckerRoutingModule } from './plagiarism-checker-routing.module';
 import { PlagiarismCheckerComponent } from './plagiarism-checker.component';
 import { CheckerComponent } from './components/checker/checker.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 @NgModule({
     imports: [
@@ -46,6 +47,6 @@ import { CheckerComponent } from './components/checker/checker.component';
         MessagesModule,
         BadgeModule,
     ],
-    declarations: [PlagiarismCheckerComponent, CheckerComponent]
+    declarations: [PlagiarismCheckerComponent, CheckerComponent, UploadComponent]
 })
 export class PlagiarismCheckerModule {}

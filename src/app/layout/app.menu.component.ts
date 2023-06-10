@@ -24,6 +24,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Plagiarism Checker',
                 items: [
                     { label: 'Checker', icon: 'pi pi-fw pi-home', routerLink: ['/plagiarism-checker/checker'] },
+                    { label: 'Upload', icon: 'pi pi-fw pi-home', routerLink: ['/plagiarism-checker/upload'] },
                 ],
             },
             {
