@@ -16,6 +16,6 @@ export class UploadComponent {
             this.uploadedFiles.push(file);
         }
 
-        this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
+        this.messageService.add({  key: 'tst', severity: 'info', summary: 'Success', detail: 'File Uploaded' });
     }
 }

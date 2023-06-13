@@ -18,16 +18,16 @@ export class CheckerComponent {
     showResult = false;
     interval: any;
 
-    percent = 0;
+    percent = 49;
 
     constructor(private messageService: MessageService, private checkerService: CheckerService) {}
 
     ngOnInit() {
         this.interval = setInterval(() => {
-            this.percent = this.percent + Math.floor(Math.random() * 10) + 1;
+            // this.percent = this.percent + Math.floor(Math.random() * 10) + 1;
 
             if (this.percent >= 23) {
-                this.percent = 23;
+                // this.percent = 23;
                 clearInterval(this.interval);
                 this.showWaitingUpload = false;
             }
