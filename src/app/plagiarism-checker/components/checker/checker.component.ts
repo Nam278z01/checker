@@ -18,7 +18,7 @@ export class CheckerComponent {
     showResult = false;
     interval: any;
 
-    percent = 49;
+    percent = 36;
 
     constructor(private messageService: MessageService, private checkerService: CheckerService) {}
 
@@ -69,7 +69,7 @@ export class CheckerComponent {
                 this.showPlagiarismChecker = false;
                 this.showResult = true;
             }
-        }, 200);
+        }, 1000);
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Class Deleted', life: 3000 });
 
     }

@@ -139,9 +139,9 @@
                     <div class="result-box-top">
                         <div>
                             <p
-                                [style.background-color]="(percent < 30 && 'green') || (percent >= 30 && percent <= 50 && 'yellow') || (percent > 50 && 'red')"
+                                [style.background-color]="(percent < 30 && 'green') || (percent >= 30 && percent <= 50 && '#eded07') || (percent > 50 && 'red')"
                             ></p>
-                            <span>{{ percent }}% Tổng tỉ lệ giống</span>
+                            <span [style.color]="(percent < 30 && 'green') || (percent >= 30 && percent <= 50 && '#eded07') || (percent > 50 && 'red')">{{ percent }}% Tổng tỉ lệ giống</span>
                         </div>
 <!--                        <p>Top sources found in the following databases</p>-->
 <!--                        <div>-->
