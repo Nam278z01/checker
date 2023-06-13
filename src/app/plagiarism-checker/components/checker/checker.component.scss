@@ -130,7 +130,6 @@
 }
 
 .result-box-top {
-    border-bottom: 2px solid #dddee2;
     padding-top: 15px;
     div:first-child {
         font-weight: bold;
@@ -211,11 +210,8 @@
 }
 
 .result-box-bottom-item-content-site {
-    div:first-child {
+    div {
         font-weight: bold;
-    }
-    div:last-child {
-        font-size: 10px;
     }
 }
 
